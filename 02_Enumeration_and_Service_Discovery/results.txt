@@ -1,0 +1,14 @@
+---Enumeration & Service Discovery Quick Summary--
+Target Subnet: 10.10.1.0/24
+Scan Tool: Nmap 7.92, snmpwalk, ldapsearch
+
+Key Findings:
+- SNMP (10.10.1.22) accessible via 'public' community.
+- SNMP disclosed full OS version, uptime, installed apps.
+- LDAP (389/tcp) accessible anonymously.
+- LDAP search returned multiple CN/OU objects.
+- NFS (2049/tcp) detected on 10.10.1.19.
+- DNS records resolve via ns1.bluehost.com (publicly exposed).
+
+Critical Risk: Unauthorized enumeration of internal services.
+Recommended Action: Disable default SNMP community and enforce LDAPS authentication.
