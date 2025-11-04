@@ -1,0 +1,18 @@
+# Commands used during enumeration
+nmap -sU -p 161 --script snmp-sysdescr 10.10.1.22
+nmap -sU -p 161 --script snmp-win32-software 10.10.1.22
+snmp-check 10.10.1.22
+snmpwalk -v1 -c public 10.10.1.22
+
+nmap -sU -p 389 10.10.1.22
+nmap -p 389 --script ldap-brute --script-args ldap.base="'cn=users,dc=ceh,dc=com'" 10.10.1.22
+ldapsearch -h 10.10.1.22 -x -s base namingcontexts
+
+nmap -p 2049 10.10.1.19
+rpcinfo -p 10.10.1.19
+
+dig ns www.certifiedhacker.com
+dig @ns1.bluehost.com www.certifiedhacker.com
+nslookup
+set q=soa
+certifiedhacker.com
