@@ -1,4 +1,4 @@
-02 — Enumeration & Service Discovery
+Enumeration & Service Discovery
 
 **Author:** CyberSal  
 **Authorization:** ✅ Performed in an **EC-Council iLabs** sandbox (authorized for educational/assessment use).
