@@ -25,7 +25,7 @@ This project focuses on the investigative phase of incident response, analyzing 
 
 ## 📊 Method & Results: Incident Analysis and Evidence Gathering
 
-*This section documents the structured process used to gather evidence from network captures and system logs (Chapter 17 & 27 Labs).*
+*This section documents the structured process used to gather evidence from network captures and system logs .*
 
 ### 1. Web Application Exploitation (SQL Injection)
 
