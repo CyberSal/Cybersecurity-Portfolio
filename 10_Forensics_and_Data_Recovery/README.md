@@ -55,6 +55,6 @@ The technical analysis provides clear evidence of a planned, covert operation:
 1.  **Policy Enforcement:** Implement **Application Whitelisting** to prevent the installation of unauthorized applications found during the analysis.
 2.  **Timeline Correlation:** Perform a detailed timeline analysis of all **USB device connections** to correlate file transfers with specific illegal activity.
 3.  **Investigative Action:** Recommend immediate action to investigate **Bad Person** and **FBI** before their departure on December 3rd.
-1.  [cite_start]**Isolate Evidence:** Preserve the data recovered from the download directory, including `Nokia Data Files.zip`[cite: 2178].
-2.  [cite_start]**Timeline Correlation:** Perform detailed timeline analysis of all **USB device connections** to correlate file transfers with suspicious searches[cite: 2187, 2233].
-3.  [cite_start]**Physical Intervention:** Recommend immediate physical or digital monitoring of **Bad Person** and **FBI** before their departure on December 3rd[cite: 2228].
+1.  **Isolate Evidence:** Preserve the data recovered from the download directory, including `Nokia Data Files.zip`.
+2.  **Timeline Correlation:** Perform detailed timeline analysis of all **USB device connections** to correlate file transfers with suspicious searches.
+3. **Physical Intervention:** Recommend immediate physical or digital monitoring of **Bad Person** and **FBI** before their departure on December 3rd.
