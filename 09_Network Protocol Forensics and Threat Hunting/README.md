@@ -1,4 +1,4 @@
-# 10 — Network Protocol Forensics and Threat Hunting 🔎
+# Network Protocol Forensics and Threat Hunting 🔎
 
 **Author:** CyberSal
 **Authorization:** ✅ Performed in **Cisco Networking Academy iLabs** sandboxes (authorized for educational/assessment use).
@@ -35,7 +35,7 @@ Analysis of an attack PCAP revealed a successful SQL injection attack against a 
 | :--- | :--- | :--- |
 | **SQLI Verification (1=1)** | ![SQLI Verification 1=1](./Screenshots/09_SQLI_VERIFICATION.jpg) | Analyzed the HTTP stream response confirming the database's vulnerability to the **`1=1` always-true query** . |
 | **Cleartext Credentials** | ![HTTP POST Credentials in Wireshark](./Screenshots/09_HTTP_CREDENTIAL_DUMP.png) | Confirmed that unencrypted **HTTP POST requests** expose credentials and other form data in cleartext. |
-| **Hash Dump** | ![SQLI Hash Dump in Wireshark](./Screenshots/09_SQLI_HASH_DUMP.png) | Successfully analyzed subsequent queries to dump **usernames and password hashes** from the database  |
+| **Hash Dump** | ![SQLI Hash Dump](./Screenshots/09_HTTP_CREDENTIAL_DUMP.png) | Successfully analyzed subsequent queries to dump **usernames and password hashes** from the database  |
 
 ### 2. Covert Data Exfiltration (DNS Tunneling)
 
