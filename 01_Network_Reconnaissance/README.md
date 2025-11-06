@@ -4,7 +4,7 @@
 **Authorization:** ✅ Performed in an **EC-Council iLabs** sandbox and explicitly authorized for educational/assessment use.
 
 ## Scenario 🛡️
-You are an ethical hacker working with a large organization (EC-Council). After completing OSINT, you move into **active reconnaissance** against a designated lab target to identify reachable services and potential entry points for later testing.
+I simulated an attacker's enumeration phase to audit our environment's defensive posture.
 
 ## Objectives 🎯
 - Check for live systems and open ports  
@@ -105,11 +105,37 @@ Active reconnaissance of `10.10.1.22` identified a Windows Server running typica
 
 ## Next Steps 🚀
 
-> Below are **targeted, read-only** enumeration actions to plan for the next lab. Use a low-priv domain user if available; otherwise test anonymous/NULL where appropriate in the authorized lab.
+> 🟣 Next Steps: Purple Team Integration & Validation
 
-### 1) SMB & Shares
+The core goal of this next phase is to close the identified security gaps and immediately **validate** that the new controls successfully block the Red Team's enumeration techniques.
+
+### 1. Remediation & Hardening (Blue Team Focus)
+
+The following steps address the critical misconfigurations that allowed the information leak:
+
+* **SNMP (161/UDP):** The immediate priority is to **change the default community string (`public`)** to a complex, non-default value, and implement a **security access control list (ACL)** to restrict all SNMP traffic to authorized network management hosts only.
+* **LDAP (389/TCP):** **Disable anonymous LDAP binds** on the Domain Controller. Additionally, enforce **LDAP Signing and LDAP Channel Binding** across the domain to mitigate Man-in-the-Middle (MITM) attacks and protect directory queries.
+* **SMB (139/445):** Enforce **SMB signing** across the network via Group Policy and ensure all shares are configured using the **Principle of Least Privilege**.
+
+### 2. Detection Engineering (Blue Team Focus)
+
+The team will develop and test new detection rules in the SIEM based on the Red Team's confirmed attack paths:
+
+* **LDAP/AD Enumeration:** Create an alert rule to monitor for an unusual volume of **anonymous bind attempts** or successive failed login attempts using a high number of different usernames (indicating a password spraying attack using the harvested list).
+* **SNMP Enumeration:** Implement network monitoring to alert on any unexpected traffic on **UDP Port 161** originating from non-management IP ranges.
+* **SMB Reconnaissance:** Develop an alert for a high volume of failed **`smbclient -L`** (share enumeration) attempts from a single source IP within a short time frame.
+
+### 3. Adversary Simulation & Validation (Purple Team Iteration)
+
+The final step is to **re-run the exact attack commands** used in the enumeration phase to confirm that the mitigations (Pillar 1) and the detection rules (Pillar 2) are effective.
+
+| Technique | Validation Test | Expected Outcome |
+| :--- | :--- | :--- |
+| **SNMP Access** | Re-run `nmap --script=snmp-sysdescr` | **FAILURE** (Service should not respond to `public` or should be filtered). |
+| **Identity Harvesting** | Re-run `nmap --script=ldap-brute` | **FAILURE** (Anonymous bind should be rejected). |
+| **SMB Share Mapping** | Re-run `smbclient -L //10.10.1.22 -N` | **FAILURE** (NULL/Anonymous session should be rejected). |
+
 ```bash
-# Host discovery (already done via Nmap), then enumerate shares:
-smbclient -L //10.10.1.22 -N              # try anonymous
-smbclient //10.10.1.22/SHARENAME -N       # test read-only access
-crackmapexec smb 10.10.1.22 --shares
+# Red Team Validation Test (Re-run): Expected to fail after GPO/ACL deployment
+nmap -sU -p 161 --script=snmp-sysdescr 10.10.1.22
+nmap -p 389 --script=ldap-brute 10.10.1.22
