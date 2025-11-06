@@ -45,7 +45,7 @@ We demonstrated the ease of disrupting network operations through volume-based f
 | Attack Type | Proof of Activity (Image) | Summary of Result |
 | :--- | :--- | :--- |
 | **Packet Flooding** | ![hping3 Flood Attack](./Screenshots/06_Hping_Flood.png) | Used `hping3` to execute a **volumetric flood of 100,000 packets** against the target, simulating a network-level DoS attack. |
-| **MAC Flooding** | (No dedicated image provided, covered in 06\_Wireshark\_Sniff.png) | Used `macof` to flood the switch's CAM table, forcing it into **fail-open (hub-like) mode** and enabling passive sniffing across the VLAN. |
+| **Network Sniffing** | Demonstrated the ability to place the network adapter into promiscuous mode to capture network traffic, including traffic not explicitly sent to the attacker's machine. |
 
 ---
 
