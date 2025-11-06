@@ -1,6 +1,6 @@
 # 01 — Network Reconnaissance & Attack Surface Audit 🟣
 
-**Author:** Salmatech  
+**Author:** CyberSal  
 **Authorization:** ✅ Performed in an **EC-Council iLabs sandbox** and explicitly authorized for educational/assessment use.
 
 ---
