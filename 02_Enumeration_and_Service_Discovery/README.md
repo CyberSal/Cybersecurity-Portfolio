@@ -46,19 +46,17 @@ Following reconnaissance, I performed **active enumeration** to extract identiti
 `nbtstat -A 10.10.1.22`  
 [![NetBIOS](./Screenshots/nbtstat_netbios.png)](./Screenshots/nbtstat_netbios.png)
 
-### SNMP system description (sysDescr)
+### Confirmed exposure via unauthenticated community string (Public).
 `nmap -sU -p 161 --script=snmp-sysdescr 10.10.1.22`  
 [![SNMP sysDescr](./Screenshots/snmp_sysdesc.png)](./Screenshots/snmp_sysdesc.png)
 
-### SNMP installed software inventory
 `nmap -sU -p 161 --script=snmp-win32-software 10.10.1.22`  
 [![SNMP software](./Screenshots/snmp_software.png)](./Screenshots/snmp_software.png)
 
-### LDAP authentication surface (controlled brute)
+### Confirmed exposure via anonymous bind, allowing directory browsing.
 `nmap -p 389 --script=ldap-brute --script-args ldap.base='"cn=users,dc=CEH,dc=com"' 10.10.1.22`  
 [![LDAP brute](./Screenshots/ldap_brute.png)](./Screenshots/ldap_brute.png)
 
-### Active Directory objects (GUI browse)
 _AD Explorer → connect to 10.10.1.22 → CN=Users_  
 [![AD Explorer users](./Screenshots/ad_explorer_users.png)](./Screenshots/ad_explorer_users.png)
 
