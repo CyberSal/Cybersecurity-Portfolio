@@ -1,6 +1,7 @@
 # Network Protocol Forensics and Threat Hunting 🔎
 
 **Author:** CyberSal
+
 **Authorization:** ✅ Performed in **Cisco Networking Academy iLabs** sandboxes (authorized for educational/assessment use).
 
 ---
