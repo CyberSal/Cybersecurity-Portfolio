@@ -35,7 +35,7 @@ Analysis of an attack PCAP revealed a successful SQL injection attack against a 
 | :--- | :--- | :--- |
 | **SQLI Verification (1=1)** | ![SQLI Verification 1=1](./Screenshots/09_SQLI_VERIFICATION.jpg) | Analyzed the HTTP stream response confirming the database's vulnerability to the **`1=1` always-true query** . |
 | **Cleartext Credentials** | ![HTTP POST Credentials in Wireshark](./Screenshots/09_HTTP_CREDENTIAL_DUMP.png) | Confirmed that unencrypted **HTTP POST requests** expose credentials and other form data in cleartext. |
-| **Hash Dump** | ![SQLI Hash Dump in Wireshark](./Screenshots/10_SQLI_HASH_DUMP.png) | Successfully analyzed subsequent queries to dump **usernames and password hashes** from the database  |
+| **Hash Dump** | ![SQLI Hash Dump in Wireshark](./Screenshots/09_SQLI_HASH_DUMP.png) | Successfully analyzed subsequent queries to dump **usernames and password hashes** from the database  |
 
 ### 2. Covert Data Exfiltration (DNS Tunneling)
 
@@ -45,7 +45,7 @@ We used SIEM tools to filter and decode long DNS queries, confirming that the DN
 | :--- | :--- | :--- |
 | **Anomaly Detection (Kibana)** | ![Kibana DNS Anomaly Log](./Screenshots/09_DNS_ANOMALY.png) | Used Kibana to filter DNS traffic and observed the **small number of targeted queries** to the suspicious domain . |
 | **Data Decoding Proof** | ![DNS Exfiltration Hex Queries](./Screenshots/09_DNS_EXFILTRATED_HEX.png) | Captured the **unusually long hexadecimal strings** from the raw DNS queries, which contain the exfiltrated PII data . |
-| **Live Log Monitoring** | ![Linux Tail Follow Log](./Screenshots/10_LOG_TAIL_FOLLOW.png) | Demonstrated real-time log analysis capability by using the **`tail -f`** command to actively monitor a log file as new entries are being written. |
+| **Live Log Monitoring** | ![Linux Tail Follow Log](./Screenshots/09_LOG_TAIL_FOLLOW.png) | Demonstrated real-time log analysis capability by using the **`tail -f`** command to actively monitor a log file as new entries are being written. |
 
 ### 3. Protocol Forensics and Triage
 
@@ -53,8 +53,8 @@ We analyzed network captures to triage malware delivery and confirm the necessit
 
 | Activity | Proof of Activity (Image) | Summary of Result |
 | :--- | :--- | :--- |
-| **Encryption Proof** | ![HTTPS Encrypted Application Data](./Screenshots/10_HTTPS_ENCRYPTED.png) | Verified that **HTTPS/TLS** successfully encrypts application data, making the traffic unreadable for passive sniffing. |
-| **Malware Extraction** | ![Wireshark Export Objects HTTP Menu](./Screenshots/10_EXTRACT_EXECUTABLE.png) | Demonstrated the method to extract a malicious executable file (malware) directly from a downloaded file stream captured in a PCAP . |
+| **Encryption Proof** | ![HTTPS Encrypted Application Data](./Screenshots/09_HTTPS_ENCRYPTED.png) | Verified that **HTTPS/TLS** successfully encrypts application data, making the traffic unreadable for passive sniffing. |
+| **Malware Extraction** | ![Wireshark Export Objects HTTP Menu](./Screenshots/09_EXTRACT_EXECUTABLE.png) | Demonstrated the method to extract a malicious executable file (malware) directly from a downloaded file stream captured in a PCAP . |
 
 ---
 
