@@ -41,8 +41,9 @@ We implemented the Advanced Encryption Standard (AES) using both a GUI tool and 
 
 | Activity | Proof of Activity (Image) | Summary of Result |
 | :--- | :--- | :--- |
-| **GUI Encryption** | ![TNTCrypter Encrypt Config](./Screenshots/08_TNTCrypter_Encrypt.png) | Successfully configured **TNTCrypter** with the plaintext, a secret key, and **AES-128 bit** to generate a ciphertext. |
-| **GUI Decryption** | ![TNTCrypter Decrypt Success](./Screenshots/08_TNTCrypter_Decrypt.png) | Confirmed data confidentiality by successfully **decrypting the ciphertext** using the matching secret key to recover the original cleartext message. |
+| **GUI Config** | ![TNTCrypter Encrypt Config](./Screenshots/08_TNTCrypter_Encrypt.png) | Configured **TNTCrypter** with plaintext, secret key, and **AES-128 bit** before execution. |
+| **GUI Encrypt Result** | ![TNTCrypter Encrypt Result](./Screenshots/08_TNTCrypter_Encrypt_Result.png) | Captured the **randomized ciphertext** in the Result pane after successful AES-128 encryption. |
+| **GUI Decryption** | ![TNTCrypter Decrypt Success](./Screenshots/08_TNTCrypter_Decrypt.png) | Confirmed confidentiality by successfully **decrypting the ciphertext** to recover the original cleartext message. |
 | **Command-Line Output** | ![OpenSSL Ciphertext View](./Screenshots/08_OpenSSL_Ciphertext.png) | Encrypted a file using the **OpenSSL** command line and viewed the resulting **Base64-encoded ciphertext**, demonstrating command-line usage. |
 
 ### 3. Cryptographic Attack and Defense
