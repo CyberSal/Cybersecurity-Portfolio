@@ -105,4 +105,4 @@ Based on the critical identity and service information gathered (default SNMP co
 
 3.  **Lateral Movement Planning:**
     -   Utilize the validated accounts and discovered shares to plan out potential **lateral movement paths** across the network for a multi-stage attack simulation.
-*Completed by Salmata Lamin*
+
