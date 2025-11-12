@@ -1,4 +1,4 @@
-# 07 — DoS/DDoS Attacks and Defense 🔴
+# DoS/DDoS Attacks and Defense 🔴
 
 **Author:** CyberSal  
 **Authorization:** ✅ Performed in an **EC-Council iLabs** sandbox (authorized for educational/assessment use).
