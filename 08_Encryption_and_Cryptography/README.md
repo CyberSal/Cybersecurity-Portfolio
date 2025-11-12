@@ -1,4 +1,4 @@
-# 08 — Encryption and Cryptography Fundamentals 🟢
+# Encryption and Cryptography Fundamentals 🟢
 
 **Author:** CyberSal
 **Authorization:** ✅ Performed in an **EC-Council iLabs** sandbox (authorized for educational/assessment use).
