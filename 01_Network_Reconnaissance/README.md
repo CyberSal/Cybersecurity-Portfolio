@@ -1,4 +1,4 @@
-# 01 — Network Reconnaissance & Attack Surface Audit 🟣
+#  Network Reconnaissance & Attack Surface Audit 🟣
 
 **Author:** CyberSal  
 **Authorization:** ✅ Performed in an **EC-Council iLabs sandbox** and explicitly authorized for educational/assessment use.
